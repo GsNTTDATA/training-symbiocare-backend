@@ -22,7 +22,7 @@ public class VisitType {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "\"durationMinutes\"")
     private Integer durationMinutes;
 
     @OneToMany(mappedBy = "visitType", cascade = CascadeType.ALL)

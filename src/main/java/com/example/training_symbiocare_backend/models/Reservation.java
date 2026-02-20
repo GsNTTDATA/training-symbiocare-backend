@@ -23,29 +23,29 @@ public class Reservation {
     @Column(nullable = false)
     private ReservationStatus status;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "\"createdAt\"")
     private OffsetDateTime createdAt;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "\"startDate\"")
     private OffsetDateTime startDate;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "\"endDate\"")
     private OffsetDateTime endDate;
 
     @ManyToOne
-    @JoinColumn(name = "patientId")
+    @JoinColumn(name = "\"patientId\"")
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private Patient patient;
 
     @ManyToOne
-    @JoinColumn(name = "doctorUserId")
+    @JoinColumn(name = "\"doctorUserId\"")
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private Doctor doctor;
 
     @ManyToOne
-    @JoinColumn(name = "visitTypeId")
+    @JoinColumn(name = "\"visitTypeId\"")
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private VisitType visitType;

@@ -38,7 +38,7 @@ public class Patient {
     @Column(nullable = false)
     private Double height;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "\"bloodType\"")
     private String bloodType;
 
     @Column(nullable = false)
@@ -50,13 +50,13 @@ public class Patient {
     private PatientLevel level = PatientLevel.BEGINNER;
 
     @Column(nullable = false, columnDefinition = "text[]")
-    private String[] pathologies;
+    private List<String> pathologies;
 
     @Column(nullable = false, columnDefinition = "text[]")
-    private String[] medications;
+    private List<String> medications;
 
     @Column(nullable = false, columnDefinition = "text[]")
-    private String[] injuries;
+    private List<String> injuries;
 
     @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
     @ToString.Exclude

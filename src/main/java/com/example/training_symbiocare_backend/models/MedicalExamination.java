@@ -28,19 +28,19 @@ public class MedicalExamination {
     private String note;
 
     @ManyToOne
-    @JoinColumn(name = "patientId")
+    @JoinColumn(name = "\"patientId\"")
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private Patient patient;
 
     @ManyToOne
-    @JoinColumn(name = "doctorUserId")
+    @JoinColumn(name = "\"doctorUserId\"")
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private Doctor doctor;
 
     @OneToOne
-    @JoinColumn(name = "reservationId", unique = true)
+    @JoinColumn(name = "\"reservationId\"", unique = true)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private Reservation reservation;

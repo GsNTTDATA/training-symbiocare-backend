@@ -19,23 +19,23 @@ public class Session {
     private UUID id;
 
     @ManyToOne
-    @JoinColumn(name = "userId")
+    @JoinColumn(name = "\"userId\"")
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private User user;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "TEXT", name = "\"refreshToken\"")
     private String refreshToken;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "\"deviceInfo\"")
     private String deviceInfo;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "\"ipAddress\"")
     private String ipAddress;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "\"createdAt\"")
     private LocalDateTime createdAt;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "\"expiresAt\"")
     private LocalDateTime expiresAt;
 }

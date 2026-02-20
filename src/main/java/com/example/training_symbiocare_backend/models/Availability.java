@@ -23,14 +23,14 @@ public class Availability {
     @Column(nullable = false)
     private String title;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, unique = true, name = "\"startTime\"")
     private OffsetDateTime startTime;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, unique = true, name = "\"endTime\"")
     private OffsetDateTime endTime;
 
     @ManyToOne
-    @JoinColumn(name = "doctorUserId")
+    @JoinColumn(name = "\"doctorUserId\"")
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private Doctor doctor;

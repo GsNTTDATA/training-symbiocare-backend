@@ -29,7 +29,7 @@ public class MedicalDetection {
     private OffsetDateTime date;
 
     @ManyToOne
-    @JoinColumn(name = "patientId")
+    @JoinColumn(name = "\"patientId\"")
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private Patient patient;

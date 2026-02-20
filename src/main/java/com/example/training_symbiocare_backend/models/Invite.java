@@ -6,6 +6,7 @@ import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -70,30 +71,30 @@ public class Invite {
     private String sport;
 
     @Column(nullable = false, columnDefinition = "text[]")
-    private String[] pathologies;
+    private List<String> pathologies;
 
     @Column(nullable = false, columnDefinition = "text[]")
-    private String[] medications;
+    private List<String> medications;
 
     @Column(nullable = false, columnDefinition = "text[]")
-    private String[] injuries;
+    private List<String> injuries;
 
     @Column(nullable = false)
     @Builder.Default
     private Boolean used = false;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "\"createdAt\"")
     @Builder.Default
     private LocalDateTime createdAt = LocalDateTime.now();
 
     @ManyToOne
-    @JoinColumn(name = "doctorUserId")
+    @JoinColumn(name = "\"doctorUserId\"")
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private Doctor doctor;
 
     @OneToOne
-    @JoinColumn(name = "patientId", unique = true)
+    @JoinColumn(name = "\"patientId\"", unique = true)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private Patient patient;

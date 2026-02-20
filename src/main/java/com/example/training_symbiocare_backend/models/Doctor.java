@@ -17,12 +17,12 @@ import java.util.UUID;
 public class Doctor {
 
     @Id
-    @Column(name = "userId")
+    @Column(name = "\"userId\"")
     private UUID userId;
 
     @OneToOne
     @MapsId
-    @JoinColumn(name = "userId")
+    @JoinColumn(name = "\"userId\"")
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private User user;
@@ -30,19 +30,19 @@ public class Doctor {
     @Column(nullable = false)
     private String specialization;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "\"medicalOffice\"")
     private String medicalOffice;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "\"registrationNumber\"")
     private String registrationNumber;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "\"orderProvince\"")
     private String orderProvince;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "\"orderDate\"")
     private LocalDate orderDate;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "\"orderType\"")
     private String orderType;
 
     @OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL)

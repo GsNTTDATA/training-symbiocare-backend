@@ -37,7 +37,7 @@ public class User {
     @Column(nullable = false, unique = true)
     private String cf;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "\"birthDate\"")
     private LocalDate birthDate;
 
     @Enumerated(EnumType.STRING)
@@ -63,17 +63,17 @@ public class User {
     @Column(nullable = false)
     private String province;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "\"twoFactorEnabled\"")
     @Builder.Default
     private Boolean twoFactorEnabled = false;
 
-    @Column
+    @Column(columnDefinition = "TEXT", name = "\"twoFactorSecret\"")
     private String twoFactorSecret;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "TEXT", name = "\"twoFactorSecretPending\"")
     private String twoFactorSecretPending;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "\"mustChangePassword\"")
     @Builder.Default
     private Boolean mustChangePassword = false;
 
